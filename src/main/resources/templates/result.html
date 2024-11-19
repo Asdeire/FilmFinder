@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Info</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+<div class="movie-info-container">
+    <div class="movie-poster">
+        <img th:src="@{${movieInfo.posterUrl}}" alt="Movie Poster" class="poster">
+    </div>
+    <div class="movie-details">
+        <h1 class="movie-title" th:text="${movieInfo.title}">Movie Title</h1>
+        <p class="movie-year">Year: <span th:text="${movieInfo.year}">2023</span></p>
+        <p class="movie-genre">Genre: <span th:text="${movieInfo.genre}">Action, Adventure</span></p>
+        <p class="movie-rating">Rating: <span th:text="${movieInfo.rating}">8.5/10</span></p>
+        <p class="movie-director">Director: <span th:text="${movieInfo.director}">John Doe</span></p>
+        <p class="movie-actors">Actors: <span th:text="${movieInfo.actors}">Jane Doe, Mark Smith, Emma Brown</span></p>
+        <p class="movie-plot">Plot: <span th:text="${movieInfo.plot}">Lorem ipsum dolor sit amet...</span></p>
+        <a th:href="'https://www.imdb.com/title/' + ${movieInfo.imdbId}" target="_blank" class="more-info">More Info</a>
+    </div>
+</div>
+</body>
+</html>
