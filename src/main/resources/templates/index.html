@@ -12,5 +12,14 @@
     <input type="text" name="title" placeholder="Enter movie title" required>
     <button type="submit">Search</button>
 </form>
+
+
+<div th:if="${success}" class="success">
+    <p th:text="${success}"></p>
+</div>
+
+<div th:if="${error}" class="error">
+    <p th:text="${error}"></p>
+</div>
 </body>
 </html>
